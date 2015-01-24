@@ -3,7 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-public class GestionEvent : MonoBehaviour {
+public class GestionEvent : MonoBehaviour
+{
     private EventListScript.EventList currentEvent = new EventListScript.EventList();
     private string[] warTab, scienceTab, spiritualityTab;
     private int warRandom, scienceRandom, spiritualityRandom;
@@ -27,6 +28,7 @@ public class GestionEvent : MonoBehaviour {
 
     public void UpdateButton()
     {
+        verifBool = true;
 
         do {
 			verifBool = false;
@@ -59,15 +61,12 @@ public class GestionEvent : MonoBehaviour {
 				}
 			}
 		} while ( verifBool == true);
-		spiritualityTabRand.Add (spiritualityRandom);
-
-        Debug.Log(warRandom + " / " + scienceRandom + " / " + spiritualityRandom);
-
+        spiritualityTabRand.Add(spiritualityRandom);
         warTab = currentEvent.getTabValues(warRandom, "WarButton");
         scienceTab = currentEvent.getTabValues(scienceRandom, "ScienceButton");
         spiritualityTab = currentEvent.getTabValues(spiritualityRandom, "SpiritualityButton");
 
-        GameObject.Find("TextWarButton").GetComponent<Text>().text = warTab[0] ;
+        GameObject.Find("TextWarButton").GetComponent<Text>().text = warTab[0];
         GameObject.Find("TextScienceButton").GetComponent<Text>().text = scienceTab[0];
         GameObject.Find("TextSpiritualityButton").GetComponent<Text>().text = spiritualityTab[0];
 

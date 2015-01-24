@@ -76,17 +76,13 @@ public class EventListScript : MonoBehaviour {
 		};
 
 		public string[] getTabValues(int random, string tag){
-			Debug.Log (tag);
 			if (tag == "WarButton") {
-				Debug.Log ("Nom event : " + tabWar[random-1][0]+ " Descri : " + tabWar[random-1][1]);
 				leEvent = tabWar[(random-1)];
 			} 
 			else if (tag == "ScienceButton") {
-				Debug.Log ("Nom event : " + tabScience[random-1][0]+ " Descri : " + tabScience[random-1][1]);
 				leEvent = tabScience[(random-1)];
 			} 
 			else {
-				Debug.Log ("Nom event : " + tabSpirituality[random-1][0]+ " Descri : " + tabSpirituality[random-1][1]);
 				leEvent = tabSpirituality[(random-1)];
 			}
 			return leEvent;
