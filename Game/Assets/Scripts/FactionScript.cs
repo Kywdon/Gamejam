@@ -61,7 +61,7 @@ public class FactionScript : MonoBehaviour {
     /// </summary>
     public void CountIteration(ProgresBar other , int _nbRand)
     {
-        Debug.Log(other.tag);
+
         if (_isPlayer == true)
         {
             if (other.tag == "WarButton" && war < 21)

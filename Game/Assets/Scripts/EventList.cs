@@ -5,10 +5,13 @@ public class EventListScript : MonoBehaviour {
 
 	public class EventList
 	{
+		private string[] leEvent = new string[3];
+
 		private string[][] tabWar = new string[20][]{ 
+
 			new string[3] {"Pokepea-ball ","‘Peacock Peacock ?’ – A wild peacock appears",""}
 			, new string[3] {"The Walking Pea","‘Brhahwhwhwh FEATHERSSS’ – Dead peacock",""}
-			, new string[3] {"Peacockarang","‘I’m the night. I’m Peacockman’ – A strangely dressed peacock",""}
+			, new string[3] {"Peacockarang","‘I’m the night. I’m Peacockman’ – A strangely dressed peacock",""} 
 			, new string[3] {"Boomerangock ","‘YAHHH HA HYAH YAAAAH’ – Random pealien",""}
 			, new string[3] {"Peadators ","‘Let’s hunt some aliens !’ – Peacock with strange mouth",""}
 			, new string[3] {"Peaxcalibur","‘I took this out of a stone. What do we do now ?",""}
@@ -25,9 +28,9 @@ public class EventListScript : MonoBehaviour {
 			, new string[3] {"PeaKong","‘HUUHHUHUH OUUUUH’ – A huge peacock stand on a tower",""}
 			, new string[3] {"Feathermourn","‘All hail the Pea King’ – Is written on it",""}
 			, new string[3] {"Peatal Gear","‘That’s one shiny peabot’",""}
-			, new string[3] {"Unknown blue shell","‘Noone would ever stand in front of my feathers !"} 
+			, new string[3] {"Unknown blue shell","‘Noone would ever stand in front of my feathers !",""} 
 		};
-		private string[][] tabScience = new string[20][]{
+        private string[][] tabScience = new string[20][]{
 			new string[3] {"Pearon-Man ","‘Yeay I know I’m awesome’ – Peaony Stark",""}
 			, new string[3] {"R2-DDock","‘Blipihrbbititii’ – Droidock",""}
 			, new string[3] {"Cybernetic","‘SARAH CONNOCK ?’ – Pearminator",""}
@@ -49,7 +52,7 @@ public class EventListScript : MonoBehaviour {
 			, new string[3] {"Franck tha Pea","‘If you don’t like it you can kiss my feathery little b*tt",""}
 			, new string[3] {"Pearty MacFlock","‘We’re going back … TO THE FUTUR !’ – Docock ",""}
 		};
-		private string[][] tabSpirituality = new string[20][]{
+        private string[][] tabSpirituality = new string[20][]{
 			new string[3] {"Saurock ","‘This eye is quite watching us ain’t it ?’ – Pearodo",""}
 			, new string[3] {"Peambuldore","‘Come there Harry, I’ve got to teach you something",""}
 			, new string[3] {"Peadogue Cult","‘Wow So dogue much fabulous very handsome",""}
@@ -71,4 +74,22 @@ public class EventListScript : MonoBehaviour {
 			, new string[3] {"Peainstein","‘Imagination is more important than knowledge",""}
 			, new string[3] {"Chtulhock","‘DIVINE PEACOCK OF TENTACLES",""}
 		};
+
+		public string[] getTabValues(int random, string tag){
+			Debug.Log (tag);
+			if (tag == "WarButton") {
+				Debug.Log ("Nom event : " + tabWar[random-1][0]+ " Descri : " + tabWar[random-1][1]);
+				leEvent = tabWar[(random-1)];
+			} 
+			else if (tag == "ScienceButton") {
+				Debug.Log ("Nom event : " + tabScience[random-1][0]+ " Descri : " + tabScience[random-1][1]);
+				leEvent = tabScience[(random-1)];
+			} 
+			else {
+				Debug.Log ("Nom event : " + tabSpirituality[random-1][0]+ " Descri : " + tabSpirituality[random-1][1]);
+				leEvent = tabSpirituality[(random-1)];
+			}
+			return leEvent;
+		}
+	}
 }
