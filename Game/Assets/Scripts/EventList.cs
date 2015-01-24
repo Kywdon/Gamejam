@@ -5,6 +5,8 @@ public class EventListScript : MonoBehaviour {
 
 	public class EventList
 	{
+		private string[] leEvent = new string[3];
+
 		private string[][] tabWar = new string[20][]{ 
 			new string[3] {"Pokepea-ball ","‘Peacock Peacock ?’ – A wild peacock appears",""}
 			, new string[3] {"The Walking Pea","‘Brhahwhwhwh FEATHERSSS’ – Dead peacock",""}
@@ -25,7 +27,7 @@ public class EventListScript : MonoBehaviour {
 			, new string[3] {"PeaKong","‘HUUHHUHUH OUUUUH’ – A huge peacock stand on a tower",""}
 			, new string[3] {"Feathermourn","‘All hail the Pea King’ – Is written on it",""}
 			, new string[3] {"Peatal Gear","‘That’s one shiny peabot’",""}
-			, new string[3] {"Unknown blue shell","‘Noone would ever stand in front of my feathers !"} 
+			, new string[3] {"Unknown blue shell","‘Noone would ever stand in front of my feathers !",""} 
 		};
 		private string[][] tabScience = new string[20][]{
 			new string[3] {"Pearon-Man ","‘Yeay I know I’m awesome’ – Peaony Stark",""}
@@ -71,4 +73,18 @@ public class EventListScript : MonoBehaviour {
 			, new string[3] {"Peainstein","‘Imagination is more important than knowledge",""}
 			, new string[3] {"Chtulhock","‘DIVINE PEACOCK OF TENTACLES",""}
 		};
+
+		public void getTabValues(int random, string tag){
+			if (tag == "WarButton") {
+				leEvent = tabWar[random];
+			} 
+			else if (tag == "ScienceButton") {
+				leEvent = tabScience[random];
+			} 
+			else {
+				leEvent = tabSpirituality[random];
+			}
+			return leEvent;
+		}
+	}
 }
