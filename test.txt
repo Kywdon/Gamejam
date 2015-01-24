@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-Bonjour
-=======
-Salut c'est François
->>>>>>> 70aa8b6f00b0fd85b6a6c87ee07bc8599bf90d72
