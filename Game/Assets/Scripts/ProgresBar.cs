@@ -8,7 +8,7 @@ public class ProgresBar : MonoBehaviour
 
     #region Attributes
     public GameObject statBarJoueur;
-    private static int warIterration , scienceIterration , spiritualityIterration ;
+    private static int warIterration, scienceIterration, spiritualityIterration, botWarIterration, botScienceIterration, botSpiritualityIterration;
 
     #endregion
 
@@ -28,7 +28,7 @@ public class ProgresBar : MonoBehaviour
 
     #endregion
 
-    #region Other Methods
+    #region Other Public Methods
     public void SetStats(float value) 
     {
 
@@ -54,16 +54,39 @@ public class ProgresBar : MonoBehaviour
             GameObject scrollBar = GameObject.Find("BotSpiritualityBarProgress");
             scrollBar.GetComponent<Scrollbar>().size += value;
         }
-
+        BotCountIteration(nbRand);
+        BotTextBarValueChange(nbRand);
     }
 
+    public void CountIteration()
+    {
+        if (this.tag == "WarButton" && warIterration < 21)
+        {
+            warIterration += 1;
+            TextBarValueChange();
+
+        }
+        else if (this.tag == "ScienceButton" && scienceIterration < 21)
+        {
+            scienceIterration += 1;
+            TextBarValueChange();
+        }
+        else if (this.tag == "SpiritualityButton" && spiritualityIterration < 21)
+        {
+            spiritualityIterration += 1;
+            TextBarValueChange();
+        }
+        SkillCheck();
+    }
+    #endregion
+
+    #region Others Private Method
     private void TextBarValueChange()
     {
         if (this.tag == "WarButton")
         {
             GameObject text = GameObject.Find("PlayerWarBarProgressText");
             text.GetComponent<Text>().text = warIterration + "/ 21";
-            Debug.LogError("test");
         }
         if (this.tag == "ScienceButton")
         {
@@ -78,25 +101,40 @@ public class ProgresBar : MonoBehaviour
 
         }
     }
-    public void CountIteration() 
+    private void BotTextBarValueChange(int _nbRand )
     {
-        if (this.tag == "WarButton" && warIterration < 21)
+        if (_nbRand == 0)
         {
-            warIterration += 1;
-            TextBarValueChange();
-            
+            GameObject text = GameObject.Find("BotWarBarProgressText");
+            text.GetComponent<Text>().text = botWarIterration + "/ 21";
         }
-        else if (this.tag == "ScienceButton" && scienceIterration < 21)
+        else if (_nbRand == 1)
         {
-            scienceIterration += 1;
-            TextBarValueChange();
+            GameObject scrollBar = GameObject.Find("BotScienceBarProgressText");
+            scrollBar.GetComponent<Text>().text = botScienceIterration + "/ 21";
+
         }
-        else if (this.tag == "SpiritualityButton" && spiritualityIterration < 21)
+        else
         {
-            spiritualityIterration += 1;
-            TextBarValueChange();
+            GameObject scrollBar = GameObject.Find("BotSpiritualityBarProgressText");
+            scrollBar.GetComponent<Text>().text = botSpiritualityIterration + "/ 21";
         }
-        SkillCheck();
+    }
+
+    private void BotCountIteration(int _nbRand)
+    {
+        if (_nbRand == 0)
+        {
+            botWarIterration += 1;
+        }
+        else if (_nbRand == 1)
+        {
+            botScienceIterration += 1;
+        }
+        else
+        {
+            botSpiritualityIterration += 1;
+        }
     }
 
     private void SkillCheck()
@@ -104,12 +142,12 @@ public class ProgresBar : MonoBehaviour
 
         if (scienceIterration == 10)
         {
-            Debug.LogError("Reussi");
+
         }
-    
+
     }
     #endregion
 
 
 
-    }
+}
