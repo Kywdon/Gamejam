@@ -32,7 +32,7 @@ public class ProgresBar : MonoBehaviour
         GameObject.Find("BotWarBarProgress").GetComponent<Scrollbar>().size = taille;
         GameObject.Find("BotScienceBarProgress").GetComponent<Scrollbar>().size = taille ;
         GameObject.Find("BotSpiritualityBarProgress").GetComponent<Scrollbar>().size = taille ;
-        Debug.Log(player.War + " / " + player.Science + " / " + player.Spirituality);
+
         
     }
 
