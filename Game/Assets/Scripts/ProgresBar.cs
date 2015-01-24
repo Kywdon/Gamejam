@@ -11,7 +11,11 @@ public class ProgresBar : MonoBehaviour
     #endregion
 
     #region Private Attributes
-    private static int warIterration, scienceIteration, spiritualityIteration, botWarIteration, botScienceIteration, botSpiritualityIteration;
+    private float taille = 0.04761905f;
+
+    private int nbRand;
+    private static FactionScript.Faction player = new FactionScript.Faction(true);
+    private static FactionScript.Faction bot = new FactionScript.Faction(false);
     #endregion
 
     #region Unity Methods
@@ -19,6 +23,17 @@ public class ProgresBar : MonoBehaviour
     void Start()
     {
 
+
+
+        GameObject.Find("PlayerWarBarProgress").GetComponent<Scrollbar>().size = taille ;
+        GameObject.Find("PlayerScienceBarProgress").GetComponent<Scrollbar>().size = taille ;
+        GameObject.Find("PlayerSpiritualityBarProgress").GetComponent<Scrollbar>().size = taille ;
+
+        GameObject.Find("BotWarBarProgress").GetComponent<Scrollbar>().size = taille;
+        GameObject.Find("BotScienceBarProgress").GetComponent<Scrollbar>().size = taille ;
+        GameObject.Find("BotSpiritualityBarProgress").GetComponent<Scrollbar>().size = taille ;
+        Debug.Log(player.War + " / " + player.Science + " / " + player.Spirituality);
+        
     }
 
     // Update is called once per frame
@@ -28,65 +43,37 @@ public class ProgresBar : MonoBehaviour
     }
 
 
+
     #endregion
 
     #region Other Public Methods
+
 
     /// <summary>
     /// This method change the value for the scrollbar and  create randomized number for the bot
     /// </summary>
     /// <param name="value"></param>
-    public void SetStats(float value) 
+    public void SetStats() 
     {
+        nbRand = Random.Range(0, 3);
+        player.CountIteration(this, nbRand);
+        bot.CountIteration(this, nbRand);
 
         
-        statBarJoueur.GetComponent<Scrollbar>().size +=value;
-        
-        int nbRand = Random.Range(0, 3);
+        GameObject.Find("PlayerWarBarProgress").GetComponent<Scrollbar>().size = taille * player.War;
+        GameObject.Find("PlayerScienceBarProgress").GetComponent<Scrollbar>().size = taille * player.Science;
+        GameObject.Find("PlayerSpiritualityBarProgress").GetComponent<Scrollbar>().size = taille * player.Spirituality;
 
-        if (nbRand == 0)
-        {
-            GameObject scrollBar = GameObject.Find("BotWarBarProgress");
-            scrollBar.GetComponent<Scrollbar>().size += value;
-        }
-        else if (nbRand == 1)
-        {
-            GameObject scrollBar = GameObject.Find("BotScienceBarProgress");
-            scrollBar.GetComponent<Scrollbar>().size += value;
+        GameObject.Find("BotWarBarProgress").GetComponent<Scrollbar>().size = taille * bot.War;
+        GameObject.Find("BotScienceBarProgress").GetComponent<Scrollbar>().size = taille * bot.Science;
+        GameObject.Find("BotSpiritualityBarProgress").GetComponent<Scrollbar>().size = taille * bot.Spirituality;
+        Debug.Log (player.War +" / " +player.Science + " / " +player.Spirituality);
+        TextBarValueChange();
 
-        }
-        else 
-        {
-            GameObject scrollBar = GameObject.Find("BotSpiritualityBarProgress");
-            scrollBar.GetComponent<Scrollbar>().size += value;
-        }
-        BotCountIteration(nbRand);
-        BotTextBarValueChange(nbRand);
     }
 
-    /// <summary>
-    /// This method count and changes the value for text bar for the player
-    /// </summary>
-    public void CountIteration()
-    {
-        if (this.tag == "WarButton" && warIterration < 21)
-        {
-            warIterration += 1;
-            TextBarValueChange();
 
-        }
-        else if (this.tag == "ScienceButton" && scienceIteration < 21)
-        {
-            scienceIteration += 1;
-            TextBarValueChange();
-        }
-        else if (this.tag == "SpiritualityButton" && spiritualityIteration < 21)
-        {
-            spiritualityIteration += 1;
-            TextBarValueChange();
-        }
-        SkillCheck();
-    }
+
     #endregion
 
     #region Others Private Method
@@ -96,76 +83,59 @@ public class ProgresBar : MonoBehaviour
     /// </summary>
     private void TextBarValueChange()
     {
+
         if (this.tag == "WarButton")
         {
             GameObject text = GameObject.Find("PlayerWarBarProgressText");
-            text.GetComponent<Text>().text = warIterration + "/ 21";
+            text.GetComponent<Text>().text = player.War + "/ 21";
         }
         if (this.tag == "ScienceButton")
         {
             GameObject text = GameObject.Find("PlayerScienceBarProgressText");
-            text.GetComponent<Text>().text = scienceIteration + "/ 21";
+            text.GetComponent<Text>().text = player.Science + "/ 21";
 
         }
         if (this.tag == "SpiritualityButton")
         {
             GameObject text = GameObject.Find("PlayerSpiritualityBarProgressText");
-            text.GetComponent<Text>().text = spiritualityIteration + "/ 21";
+            text.GetComponent<Text>().text = player.Spirituality + "/ 21";
 
         }
+
+        if (nbRand == 0)
+        {
+            GameObject text = GameObject.Find("BotWarBarProgressText");
+            text.GetComponent<Text>().text = bot.War + "/ 21";
+        }
+        else if (nbRand == 1)
+        {
+            GameObject scrollBar = GameObject.Find("BotScienceBarProgressText");
+            scrollBar.GetComponent<Text>().text = bot.Science + "/ 21";
+
+        }
+        else
+        {
+            GameObject scrollBar = GameObject.Find("BotSpiritualityBarProgressText");
+            scrollBar.GetComponent<Text>().text = bot.Spirituality + "/ 21";
+        }
     }
+
+
     /// <summary>
     /// Changed the value bar for the bot 
     /// </summary>
     /// <param name="_nbRand">Number randomize for bot attribute </param>
     private void BotTextBarValueChange(int _nbRand )
     {
-        if (_nbRand == 0)
-        {
-            GameObject text = GameObject.Find("BotWarBarProgressText");
-            text.GetComponent<Text>().text = botWarIteration + "/ 21";
-        }
-        else if (_nbRand == 1)
-        {
-            GameObject scrollBar = GameObject.Find("BotScienceBarProgressText");
-            scrollBar.GetComponent<Text>().text = botScienceIteration + "/ 21";
 
-        }
-        else
-        {
-            GameObject scrollBar = GameObject.Find("BotSpiritualityBarProgressText");
-            scrollBar.GetComponent<Text>().text = botSpiritualityIteration + "/ 21";
-        }
     }
     /// <summary>
     /// This are the number of iteration for each bot attribute
     /// </summary>
     /// <param name="_nbRand">Number Randomizer for bot attribute</param>
-    private void BotCountIteration(int _nbRand)
-    {
-        if (_nbRand == 0)
-        {
-            botWarIteration += 1;
-        }
-        else if (_nbRand == 1)
-        {
-            botScienceIteration += 1;
-        }
-        else
-        {
-            botSpiritualityIteration += 1;
-        }
-    }
+    
 
-    private void SkillCheck()
-    {
 
-        if (scienceIteration == 10)
-        {
-
-        }
-
-    }
     #endregion
 
 
