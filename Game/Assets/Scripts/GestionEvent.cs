@@ -9,17 +9,15 @@ public class GestionEvent : MonoBehaviour {
     private int warRandom, scienceRandom, spiritualityRandom;
     private bool verifBool;
     private int i;
-    private int[] warTabRand ,scienceTabRand, spiritualityTabRand;
-    /*private List<int> warTabRand = new List<int>();
+    private List<int> warTabRand = new List<int>();
     private List<int> scienceTabRand = new List<int>();
-    private List<int> spiritualityTabRand = new List<int>();*/
+    private List<int> spiritualityTabRand = new List<int>();
+
 	// Use this for initialization
 	void Start () {
-        Debug.Log("Je suis dans le Start");
-        warTabRand = new int[21];
-        scienceTabRand = new int[21];
-        spiritualityTabRand = new int[21];
-        
+		warTabRand.Add (0);
+		scienceTabRand.Add (0);
+		spiritualityTabRand.Add (0);
 	}
 	
 	// Update is called once per frame
@@ -30,86 +28,40 @@ public class GestionEvent : MonoBehaviour {
     public void UpdateButton()
     {
 
-        Debug.Log("Je suis dans Update");
-        Debug.Log(spiritualityTabRand[0]);
-        
-         {
-              i= 0;
-             verifBool = false;
-             warRandom = Random.Range(1, 21);
-             Debug.Log("Je suis dans le do");
+        do {
+			verifBool = false;
+			warRandom = Random.Range (1, 21);
+			foreach (int wardata in warTabRand) {
+				if (wardata == warRandom) {
+					verifBool = true;
+				}
+			}
+		} while ( verifBool == true);
+        warTabRand.Add (warRandom);
 
-             while (verifBool == true) ;
-             foreach (int wardata in warTabRand)
-             {
-                 Debug.Log("Je suis dans le Foreach");
-                     if (verifBool =! true)
-                     {
-                         Debug.Log("Je suis dans le If verifBool");
-                         i++;
-                         if (wardata == warRandom)
-                         {
-                             Debug.Log("Je suis dans If wardata");
-                             verifBool = true;
-                         } 
-                     }
-                           
+		do {
+			verifBool = false;
+			scienceRandom = Random.Range (1, 21);
+			foreach (int sciencedata in scienceTabRand) {
+				if (sciencedata == scienceRandom) {
+					verifBool = true;
+				}
+			}
+		} while ( verifBool == true);
+		scienceTabRand.Add (scienceRandom);
 
+		do {
+			verifBool = false;
+			spiritualityRandom = Random.Range (1, 21);
+			foreach (int spiritualitydata in spiritualityTabRand) {
+				if (spiritualitydata == spiritualityRandom) {
+					verifBool = true;
+				}
+			}
+		} while ( verifBool == true);
+		spiritualityTabRand.Add (spiritualityRandom);
 
-                 }
-           
-         } 
-
-            warTabRand[i] = warRandom;
-
-
-
-        /*
-         do
-         {
-             i = 0;
-             verifBool = false;
-             scienceRandom = Random.Range(1, 21);
-             foreach (int sciencedata in scienceTabRand)
-             {
-                 if (verifBool = !true)
-                 {
-                     i++;
-                     if (sciencedata == scienceRandom)
-                     {
-                         verifBool = true;
-                     }
-                 }
-             }
-         } while (verifBool == false);
-         scienceTabRand[i] = scienceRandom;
-
-
-
-
-        
-         do
-         {
-             i = 0;
-             verifBool = false;
-             spiritualityRandom = Random.Range(1, 21);
-             foreach (int spiritualitydata in spiritualityTabRand)
-             {
-                 if (verifBool = !true)
-                 {
-                     i++;
-                     if (spiritualitydata == spiritualityRandom)
-                     {
-                         verifBool = true;
-                     }
-                 }
-             }
-         } while (verifBool == false);
-         spiritualityTabRand[i] = spiritualityRandom;
-        
-         */
-        //Debug.Log(warRandom + " / " + scienceRandom + " / " + spiritualityRandom);
-
+        Debug.Log(warRandom + " / " + scienceRandom + " / " + spiritualityRandom);
 
         warTab = currentEvent.getTabValues(warRandom, "WarButton");
         scienceTab = currentEvent.getTabValues(scienceRandom, "ScienceButton");
