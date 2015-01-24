@@ -1,0 +1,6 @@
+###### CHARTE DE COULEUR #######
+Rouge : #ff3333
+Vert : #22ad3e
+Bleu : #3399ff
+Texte Log : #808080
+Opacité des bouton de choix en hover : 80%
