@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class GestionEvent : MonoBehaviour
 {
     private EventListScript.EventList currentEvent = new EventListScript.EventList();
-    private string[] warTab, scienceTab, spiritualityTab;
+    private string[] warTab, scienceTab, spiritualityTab = new string[3];
     private int warRandom, scienceRandom, spiritualityRandom;
     private bool verifBool;
     private int i;
@@ -17,9 +17,7 @@ public class GestionEvent : MonoBehaviour
 
 	// Use this for initialization
 	void Start () {
-		warTabRand.Add (0);
-		scienceTabRand.Add (0);
-		spiritualityTabRand.Add (0);
+
 	}
 	
 	// Update is called once per frame
@@ -65,14 +63,48 @@ public class GestionEvent : MonoBehaviour
 					}
 			} while ( verifBool == true);
 			spiritualityTabRand.Add (spiritualityRandom);
-			warTab = currentEvent.getTabValues (warRandom, "WarButton");
-			scienceTab = currentEvent.getTabValues (scienceRandom, "ScienceButton");
-			spiritualityTab = currentEvent.getTabValues (spiritualityRandom, "SpiritualityButton");
 
 			GameObject.Find ("TextWarButton").GetComponent<Text> ().text = warTab [0];
 			GameObject.Find ("TextScienceButton").GetComponent<Text> ().text = scienceTab [0];
 			GameObject.Find ("TextSpiritualityButton").GetComponent<Text> ().text = spiritualityTab [0];
-		}
 
+			warTab = currentEvent.getTabValues (warRandom, "WarButton");
+			scienceTab = currentEvent.getTabValues (scienceRandom, "ScienceButton");
+			spiritualityTab = currentEvent.getTabValues (spiritualityRandom, "SpiritualityButton");
+
+
+
+			if (this.tag == "WarButton"){
+				GameObject.Find ("LogBox").GetComponent<Text>().text += "\r\n" + warTab[1];
+			}
+			else if (this.tag == "ScienceButton"){
+				GameObject.Find ("LogBox").GetComponent<Text>().text += "\r\n" + scienceTab[1];
+			}
+			else {
+				GameObject.Find ("LogBox").GetComponent<Text>().text += "\r\n" + spiritualityTab[1];
+			}
+		}
     }
+
+	public void gameInitialize(){
+		warTabRand.Add (0);
+		scienceTabRand.Add (0);
+		spiritualityTabRand.Add (0);
+		warRandom = Random.Range (1, 21);
+		warTabRand.Add (warRandom);
+		scienceRandom = Random.Range (1, 21);
+		scienceTabRand.Add (scienceRandom);
+		spiritualityRandom = Random.Range (1, 21);
+		spiritualityTabRand.Add (spiritualityRandom);
+		GameObject.Find ("LogBox").GetComponent<Text> ().text = "Leonleon’s Peacock only got 20 cycle to build up their civilization… Neighboring planet, Peafowlia will soon meet, crash on Leonleon and then you’ll have to do everything for your peacock survival.  Will you exterminate them ? Nor convert them to your faith ? Maybe will you use your head to do something else ? It’s up to you !";
+		warTab = currentEvent.getTabValues (warRandom, "WarButton");
+		scienceTab = currentEvent.getTabValues (scienceRandom, "ScienceButton");
+		spiritualityTab = currentEvent.getTabValues (spiritualityRandom, "SpiritualityButton");
+		GameObject.Find ("TextWarButton").GetComponent<Text> ().text = warTab [0];
+		GameObject.Find ("TextScienceButton").GetComponent<Text> ().text = scienceTab [0];
+		GameObject.Find ("TextSpiritualityButton").GetComponent<Text> ().text = spiritualityTab [0];
+		warTab = currentEvent.getTabValues (warRandom, "WarButton");
+		scienceTab = currentEvent.getTabValues (scienceRandom, "ScienceButton");
+		spiritualityTab = currentEvent.getTabValues (spiritualityRandom, "SpiritualityButton");
+	}
 }

@@ -77,6 +77,7 @@ public class EventListScript : MonoBehaviour {
 
 		public string[] getTabValues(int random, string tag){
 			if (tag == "WarButton") {
+				Debug.Log("Name : " + tabWar[(random-1)][0].ToString()+ " / Event : " + tabWar[(random-1)][1].ToString());
 				leEvent = tabWar[(random-1)];
 			} 
 			else if (tag == "ScienceButton") {
