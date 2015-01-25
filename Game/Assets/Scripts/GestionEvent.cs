@@ -146,10 +146,7 @@ public class GestionEvent : MonoBehaviour
 						EndGame ();
 				}
 		}
-
-
-		public Image testImage;
-		public Sprite spr;
+	
 		private int part_paon;	
 
 		private void DayEvent()
@@ -158,21 +155,22 @@ public class GestionEvent : MonoBehaviour
 				if (part_paon > 10)
 						part_paon -= 10;
 				GameObject.Find ("NumeroDay" + day).GetComponent<Text> ().enabled = true;
-				if (this.tag == "WarButton") {   
-						GameObject.Find("Paon_" + part_paon).GetComponent<Image>().sprite = Resources.Load<Sprite> ("Paon_" + countCycle + "_War");
+				if (this.tag == "WarButton") {
+			Debug.Log ("Paon_" + part_paon + "// Paon_" + day + "_War");
+						GameObject.Find("Paon_" + part_paon).GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite> ("Paon_" + day + "_War");
 						GameObject.Find ("Day" + day).GetComponent<Image> ().enabled = true;
 						GameObject.Find ("Day" + day).GetComponent<Image> ().sprite = Resources.Load<Sprite> ("IcoGuerrier");
 				
 						day++;     
 				}
 				if (this.tag == "ScienceButton") {
-						GameObject.Find("Paon_" + part_paon).GetComponent<Image>().sprite = Resources.Load<Sprite> ("Paon_" + countCycle + "_Science");
+			GameObject.Find("Paon_" + part_paon).GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite> ("Paon_" + countCycle + "_Science");
 						GameObject.Find ("Day" + day).GetComponent<Image> ().enabled = true;
 						GameObject.Find ("Day" + day).GetComponent<Image> ().sprite = Resources.Load<Sprite> ("IcoScience");
 						day++;
 				}
 				if (this.tag == "SpiritualityButton") {
-						GameObject.Find("Paon_" + part_paon).GetComponent<Image>().sprite = Resources.Load<Sprite> ("Paon_" + countCycle + "_Spirituality");
+			GameObject.Find("Paon_" + part_paon).GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite> ("Paon_" + countCycle + "_Spirituality");
 						GameObject.Find ("Day" + day).GetComponent<Image> ().enabled = true;
 						GameObject.Find ("Day" + day).GetComponent<Image> ().sprite = Resources.Load<Sprite> ("IcoSpirite");
 						day++;
