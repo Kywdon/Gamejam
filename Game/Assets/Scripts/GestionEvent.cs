@@ -36,7 +36,7 @@ public class GestionEvent : MonoBehaviour
 
     public void UpdateButton()
     {
-
+		this.audio.Play ();
 				countCycle ++;
 				if (countCycle == 1) {
 						GameObject.Find ("LogBox").GetComponent<Text> ().text = "Leonleon’s Peacock only got 20 cycle to build up their civilization… Neighboring planet, Peafowlia will soon meet, " +
