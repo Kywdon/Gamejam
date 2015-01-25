@@ -10,10 +10,13 @@ public class GestionEvent : MonoBehaviour
     private int warRandom, scienceRandom, spiritualityRandom;
     private bool verifBool;
     private int i;
+
 	private static List<int> warTabRand = new List<int>();
 	private static List<int> scienceTabRand = new List<int>();
 	private static List<int> spiritualityTabRand = new List<int>();
 	private static int countCycle = new int();
+	private static int day = 1;
+
 
 	// Use this for initialization
 	void Start () {
@@ -73,6 +76,33 @@ public class GestionEvent : MonoBehaviour
 			GameObject.Find ("TextScienceButton").GetComponent<Text> ().text = scienceTab [0];
 			GameObject.Find ("TextSpiritualityButton").GetComponent<Text> ().text = spiritualityTab [0];
 		}
+
+    }
+    public Image testImage;
+    public Sprite spr;
+    public void DayEvent()
+    {
+        GameObject.Find("NumeroDay" + day).GetComponent<Text>().enabled = true;
+        if (this.tag == "WarButton")
+	{   
+        GameObject.Find("Day"+day).GetComponent<Image>().enabled = true;
+		 GameObject.Find("Day" + day).GetComponent<Image>().sprite = Resources.Load<Sprite>("IcoGuerrier");
+         
+        day++;     
+	}
+        if (this.tag == "ScienceButton")
+        {
+            GameObject.Find("Day" + day).GetComponent<Image>().enabled = true;
+            GameObject.Find("Day" + day).GetComponent<Image>().sprite = Resources.Load<Sprite>("IcoScience");
+            day++;
+        }
+        if (this.tag == "SpiritualityButton")
+        {
+            GameObject.Find("Day" + day).GetComponent<Image>().enabled = true;
+            GameObject.Find("Day" + day).GetComponent<Image>().sprite = Resources.Load<Sprite>("IcoSpirite");
+            day++;
+        }
+        
 
     }
 }
