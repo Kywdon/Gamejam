@@ -59,7 +59,7 @@ public class FactionScript : MonoBehaviour {
     /// <summary>
     /// This method count and changes the value for text bar for the player
     /// </summary>
-    public void CountIteration(ProgresBar other , int _nbRand)
+    public void CountIteration(GestionEvent other , int _nbRand)
     {
 
         if (_isPlayer == true)
