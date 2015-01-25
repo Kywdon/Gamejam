@@ -86,7 +86,7 @@ public class GestionEvent : MonoBehaviour
 								}
 						} while ( verifBool == true);
 						spiritualityTabRand.Add (spiritualityRandom);
-				
+						
 				
 						if (this.tag == "WarButton") {
 								GameObject.Find ("LogBox").GetComponent<Text> ().text += "\r\n" + warTab [1];
@@ -95,6 +95,8 @@ public class GestionEvent : MonoBehaviour
 						} else {
 								GameObject.Find ("LogBox").GetComponent<Text> ().text += "\r\n" + spiritualityTab [1];
 						}
+
+
 
 						warTab = currentEvent.getTabValues (warRandom, "WarButton");
 						scienceTab = currentEvent.getTabValues (scienceRandom, "ScienceButton");
@@ -146,24 +148,31 @@ public class GestionEvent : MonoBehaviour
 		}
 
 
-	public Image testImage;
+		public Image testImage;
 		public Sprite spr;
+		private int part_paon;	
 
 		private void DayEvent()
 		{
+				part_paon = day;
+				if (part_paon > 10)
+						part_paon -= 10;
 				GameObject.Find ("NumeroDay" + day).GetComponent<Text> ().enabled = true;
 				if (this.tag == "WarButton") {   
+						GameObject.Find("Paon_" + part_paon).GetComponent<Image>().sprite = Resources.Load<Sprite> ("Paon_" + countCycle + "_War");
 						GameObject.Find ("Day" + day).GetComponent<Image> ().enabled = true;
 						GameObject.Find ("Day" + day).GetComponent<Image> ().sprite = Resources.Load<Sprite> ("IcoGuerrier");
 				
 						day++;     
 				}
 				if (this.tag == "ScienceButton") {
+						GameObject.Find("Paon_" + part_paon).GetComponent<Image>().sprite = Resources.Load<Sprite> ("Paon_" + countCycle + "_Science");
 						GameObject.Find ("Day" + day).GetComponent<Image> ().enabled = true;
 						GameObject.Find ("Day" + day).GetComponent<Image> ().sprite = Resources.Load<Sprite> ("IcoScience");
 						day++;
 				}
 				if (this.tag == "SpiritualityButton") {
+						GameObject.Find("Paon_" + part_paon).GetComponent<Image>().sprite = Resources.Load<Sprite> ("Paon_" + countCycle + "_Spirituality");
 						GameObject.Find ("Day" + day).GetComponent<Image> ().enabled = true;
 						GameObject.Find ("Day" + day).GetComponent<Image> ().sprite = Resources.Load<Sprite> ("IcoSpirite");
 						day++;
