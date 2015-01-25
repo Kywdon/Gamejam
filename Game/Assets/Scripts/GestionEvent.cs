@@ -206,10 +206,10 @@ public class GestionEvent : MonoBehaviour
 		statFinalBot = botStat[2]+botStat[1]*(botStat[0]/2 + 1);
 
 		if (statFinalPlayer > statFinalBot) {
-			Debug.Log("Victory");
+            Application.LoadLevel(2);
 		}
 		else {
-			Debug.Log("Lose");
+            Application.LoadLevel(3);
 		}
 
 
