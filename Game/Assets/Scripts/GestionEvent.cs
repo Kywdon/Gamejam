@@ -164,13 +164,13 @@ public class GestionEvent : MonoBehaviour
 						day++;     
 				}
 				if (this.tag == "ScienceButton") {
-			GameObject.Find("Paon_" + part_paon).GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite> ("Paon_" + countCycle + "_Science");
+                    GameObject.Find("Paon_" + part_paon).GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Paon_" + day + "_Science");
 						GameObject.Find ("Day" + day).GetComponent<Image> ().enabled = true;
 						GameObject.Find ("Day" + day).GetComponent<Image> ().sprite = Resources.Load<Sprite> ("IcoScience");
 						day++;
 				}
 				if (this.tag == "SpiritualityButton") {
-			GameObject.Find("Paon_" + part_paon).GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite> ("Paon_" + countCycle + "_Spirituality");
+                    GameObject.Find("Paon_" + part_paon).GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Paon_" + day + "_Spirituality");
 						GameObject.Find ("Day" + day).GetComponent<Image> ().enabled = true;
 						GameObject.Find ("Day" + day).GetComponent<Image> ().sprite = Resources.Load<Sprite> ("IcoSpirite");
 						day++;
