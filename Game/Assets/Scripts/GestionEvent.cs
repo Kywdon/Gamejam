@@ -10,10 +10,13 @@ public class GestionEvent : MonoBehaviour
     private int warRandom, scienceRandom, spiritualityRandom;
     private bool verifBool;
     private int i;
+
 	private static List<int> warTabRand = new List<int>();
 	private static List<int> scienceTabRand = new List<int>();
 	private static List<int> spiritualityTabRand = new List<int>();
 	private static int countCycle = new int();
+	private static int day = 1;
+
 
 	// Use this for initialization
 	void Start () {
@@ -27,64 +30,89 @@ public class GestionEvent : MonoBehaviour
 
     public void UpdateButton()
     {
-		countCycle ++;
-		if (countCycle < 21) {
-			verifBool = true;
+				countCycle ++;
+				if (countCycle < 21) {
+						verifBool = true;
 
-			do {
-					verifBool = false;
-					warRandom = Random.Range (1, 21);
-					foreach (int wardata in warTabRand) {
-							if (wardata == warRandom) {
-									verifBool = true;
-							}
-					}
-			} while ( verifBool == true);
-			warTabRand.Add (warRandom);
+						do {
+								verifBool = false;
+								warRandom = Random.Range (1, 21);
+								foreach (int wardata in warTabRand) {
+										if (wardata == warRandom) {
+												verifBool = true;
+										}
+								}
+						} while ( verifBool == true);
+						warTabRand.Add (warRandom);
 
-			do {
-					verifBool = false;
-					scienceRandom = Random.Range (1, 21);
-					foreach (int sciencedata in scienceTabRand) {
-							if (sciencedata == scienceRandom) {
-									verifBool = true;
-							}
-					}
-			} while ( verifBool == true);
-			scienceTabRand.Add (scienceRandom);
+						do {
+								verifBool = false;
+								scienceRandom = Random.Range (1, 21);
+								foreach (int sciencedata in scienceTabRand) {
+										if (sciencedata == scienceRandom) {
+												verifBool = true;
+										}
+								}
+						} while ( verifBool == true);
+						scienceTabRand.Add (scienceRandom);
 
-			do {
-					verifBool = false;
-					spiritualityRandom = Random.Range (1, 21);
-					foreach (int spiritualitydata in spiritualityTabRand) {
-							if (spiritualitydata == spiritualityRandom) {
-									verifBool = true;
-							}
-					}
-			} while ( verifBool == true);
-			spiritualityTabRand.Add (spiritualityRandom);
+						do {
+								verifBool = false;
+								spiritualityRandom = Random.Range (1, 21);
+								foreach (int spiritualitydata in spiritualityTabRand) {
+										if (spiritualitydata == spiritualityRandom) {
+												verifBool = true;
+										}
+								}
+						} while ( verifBool == true);
+						spiritualityTabRand.Add (spiritualityRandom);
 
-			GameObject.Find ("TextWarButton").GetComponent<Text> ().text = warTab [0];
-			GameObject.Find ("TextScienceButton").GetComponent<Text> ().text = scienceTab [0];
-			GameObject.Find ("TextSpiritualityButton").GetComponent<Text> ().text = spiritualityTab [0];
+						GameObject.Find ("TextWarButton").GetComponent<Text> ().text = warTab [0];
+						GameObject.Find ("TextScienceButton").GetComponent<Text> ().text = scienceTab [0];
+						GameObject.Find ("TextSpiritualityButton").GetComponent<Text> ().text = spiritualityTab [0];
 
-			warTab = currentEvent.getTabValues (warRandom, "WarButton");
-			scienceTab = currentEvent.getTabValues (scienceRandom, "ScienceButton");
-			spiritualityTab = currentEvent.getTabValues (spiritualityRandom, "SpiritualityButton");
+						warTab = currentEvent.getTabValues (warRandom, "WarButton");
+						scienceTab = currentEvent.getTabValues (scienceRandom, "ScienceButton");
+						spiritualityTab = currentEvent.getTabValues (spiritualityRandom, "SpiritualityButton");
 
 
 
-			if (this.tag == "WarButton"){
-				GameObject.Find ("LogBox").GetComponent<Text>().text += "\r\n" + warTab[1];
-			}
-			else if (this.tag == "ScienceButton"){
-				GameObject.Find ("LogBox").GetComponent<Text>().text += "\r\n" + scienceTab[1];
-			}
-			else {
-				GameObject.Find ("LogBox").GetComponent<Text>().text += "\r\n" + spiritualityTab[1];
-			}
+						if (this.tag == "WarButton") {
+								GameObject.Find ("LogBox").GetComponent<Text> ().text += "\r\n" + warTab [1];
+						} else if (this.tag == "ScienceButton") {
+								GameObject.Find ("LogBox").GetComponent<Text> ().text += "\r\n" + scienceTab [1];
+						} else {
+								GameObject.Find ("LogBox").GetComponent<Text> ().text += "\r\n" + spiritualityTab [1];
+						}	
+				}
 		}
-    }
+
+		public Image testImage;
+		public Sprite spr;
+
+		public void DayEvent()
+		{
+			GameObject.Find("NumeroDay" + day).GetComponent<Text>().enabled = true;
+			if (this.tag == "WarButton")
+			{   
+				GameObject.Find("Day"+day).GetComponent<Image>().enabled = true;
+				GameObject.Find("Day" + day).GetComponent<Image>().sprite = Resources.Load<Sprite>("IcoGuerrier");
+				
+				day++;     
+			}
+			if (this.tag == "ScienceButton")
+			{
+				GameObject.Find("Day" + day).GetComponent<Image>().enabled = true;
+				GameObject.Find("Day" + day).GetComponent<Image>().sprite = Resources.Load<Sprite>("IcoScience");
+				day++;
+			}
+			if (this.tag == "SpiritualityButton")
+			{
+				GameObject.Find("Day" + day).GetComponent<Image>().enabled = true;
+				GameObject.Find("Day" + day).GetComponent<Image>().sprite = Resources.Load<Sprite>("IcoSpirite");
+				day++;
+			}				
+		}
 
 	public void gameInitialize(){
 		warTabRand.Add (0);
@@ -106,5 +134,6 @@ public class GestionEvent : MonoBehaviour
 		warTab = currentEvent.getTabValues (warRandom, "WarButton");
 		scienceTab = currentEvent.getTabValues (scienceRandom, "ScienceButton");
 		spiritualityTab = currentEvent.getTabValues (spiritualityRandom, "SpiritualityButton");
-	}
+	}    
 }
+
