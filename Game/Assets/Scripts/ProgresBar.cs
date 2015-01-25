@@ -13,9 +13,7 @@ public class ProgresBar : MonoBehaviour
     #region Private Attributes
     private float taille = 0.04761905f;
 
-    private int nbRand;
-    private static FactionScript.Faction player = new FactionScript.Faction(true);
-    private static FactionScript.Faction bot = new FactionScript.Faction(false);
+
     #endregion
 
     #region Unity Methods
@@ -55,20 +53,14 @@ public class ProgresBar : MonoBehaviour
     /// <param name="value"></param>
     public void SetStats() 
     {
-        nbRand = Random.Range(0, 3);
-        player.CountIteration(this, nbRand);
-        bot.CountIteration(this, nbRand);
+		GameObject.Find("PlayerWarBarProgress").GetComponent<Scrollbar>().size = taille * GestionEvent.player.War;
+		GameObject.Find("PlayerScienceBarProgress").GetComponent<Scrollbar>().size = taille * GestionEvent.player.Science;
+		GameObject.Find("PlayerSpiritualityBarProgress").GetComponent<Scrollbar>().size = taille * GestionEvent.player.Spirituality;
 
-        
-        GameObject.Find("PlayerWarBarProgress").GetComponent<Scrollbar>().size = taille * player.War;
-        GameObject.Find("PlayerScienceBarProgress").GetComponent<Scrollbar>().size = taille * player.Science;
-        GameObject.Find("PlayerSpiritualityBarProgress").GetComponent<Scrollbar>().size = taille * player.Spirituality;
-
-        GameObject.Find("BotWarBarProgress").GetComponent<Scrollbar>().size = taille * bot.War;
-        GameObject.Find("BotScienceBarProgress").GetComponent<Scrollbar>().size = taille * bot.Science;
-        GameObject.Find("BotSpiritualityBarProgress").GetComponent<Scrollbar>().size = taille * bot.Spirituality;
+		GameObject.Find("BotWarBarProgress").GetComponent<Scrollbar>().size = taille * GestionEvent.bot.War;
+        GameObject.Find("BotScienceBarProgress").GetComponent<Scrollbar>().size = taille * GestionEvent.bot.Science;
+		GameObject.Find("BotSpiritualityBarProgress").GetComponent<Scrollbar>().size = taille * GestionEvent.bot.Spirituality;
         TextBarValueChange();
-
     }
 
 
@@ -86,36 +78,36 @@ public class ProgresBar : MonoBehaviour
         if (this.tag == "WarButton")
         {
             GameObject text = GameObject.Find("PlayerWarBarProgressText");
-            text.GetComponent<Text>().text = player.War + "/ 21";
+			text.GetComponent<Text>().text = GestionEvent.player.War + "/ 21";
         }
         if (this.tag == "ScienceButton")
         {
             GameObject text = GameObject.Find("PlayerScienceBarProgressText");
-            text.GetComponent<Text>().text = player.Science + "/ 21";
+			text.GetComponent<Text>().text = GestionEvent.player.Science + "/ 21";
 
         }
         if (this.tag == "SpiritualityButton")
         {
             GameObject text = GameObject.Find("PlayerSpiritualityBarProgressText");
-            text.GetComponent<Text>().text = player.Spirituality + "/ 21";
+			text.GetComponent<Text>().text = GestionEvent.player.Spirituality + "/ 21";
 
         }
 
-        if (nbRand == 0)
+		if (GestionEvent.nbRand == 0)
         {
             GameObject text = GameObject.Find("BotWarBarProgressText");
-            text.GetComponent<Text>().text = bot.War + "/ 21";
+			text.GetComponent<Text>().text = GestionEvent.bot.War + "/ 21";
         }
-        else if (nbRand == 1)
+		else if (GestionEvent.nbRand == 1)
         {
             GameObject scrollBar = GameObject.Find("BotScienceBarProgressText");
-            scrollBar.GetComponent<Text>().text = bot.Science + "/ 21";
+			scrollBar.GetComponent<Text>().text = GestionEvent.bot.Science + "/ 21";
 
         }
         else
         {
             GameObject scrollBar = GameObject.Find("BotSpiritualityBarProgressText");
-            scrollBar.GetComponent<Text>().text = bot.Spirituality + "/ 21";
+			scrollBar.GetComponent<Text>().text = GestionEvent.bot.Spirituality + "/ 21";
         }
     }
 

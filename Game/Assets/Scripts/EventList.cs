@@ -77,13 +77,14 @@ public class EventListScript : MonoBehaviour {
 
 		public string[] getTabValues(int random, string tag){
 			if (tag == "WarButton") {
-				leEvent = tabWar[(random-1)];
+				Debug.Log("Name : " + tabWar[random][0].ToString()+ " / Event : " + tabWar[random][1].ToString());
+				leEvent = tabWar[random];
 			} 
 			else if (tag == "ScienceButton") {
-				leEvent = tabScience[(random-1)];
+				leEvent = tabScience[random];
 			} 
 			else {
-				leEvent = tabSpirituality[(random-1)];
+				leEvent = tabSpirituality[random];
 			}
 			return leEvent;
 		}
