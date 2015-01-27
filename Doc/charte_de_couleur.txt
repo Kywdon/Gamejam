@@ -2,7 +2,6 @@
 Rouge : #ff3333
 Vert : #22ad3e
 Bleu : #3399ff
-Texte Log : #808080
 Opacité des bouton de choix en hover : 80%
 Texte bouton choix : #080b1f
 Texte des paramètres : #9e0000

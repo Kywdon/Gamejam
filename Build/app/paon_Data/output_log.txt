@@ -1,0 +1,192 @@
+Initialize engine version: 4.6.1f1 (d1db7a1b5196)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 660M (ID=0xfd4)
+    Vendor:   NVIDIA
+    VRAM:     1990 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: F:\gamejam\Build\a pp\paon_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading F:\gamejam\Build\a pp\paon_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: F:\gamejam\Build\a pp\paon_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading F:\gamejam\Build\a pp\paon_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: F:\gamejam\Build\a pp\paon_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading F:\gamejam\Build\a pp\paon_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.079 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: F:\gamejam\Build\a pp\paon_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: F:\gamejam\Build\a pp\paon_Data\Managed\System.dll (this message is harmless)
+test
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+UnloadTime: 3.304263 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 106 unused Assets to reduce memory usage. Loaded Objects now: 705.
+Total: 0.905381 ms (FindLiveObjects: 0.036590 ms CreateObjectMapping: 0.013386 ms MarkObjects: 0.331541 ms  DeleteObjects: 0.110216 ms)
+
+Name : Boomerangock  / Event : ‘YAHHH HA HYAH YAAAAH’ – Random pealien
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Paon_1// Paon_1_War
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Name : PeaCop / Event : ‘Dead or alive, you’re com’
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Name : Peacockarang / Event : ‘I’m the night. I’m Peacockman’ – A strangely dressed peacock
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+test
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Name : Pearamid Head / Event : ‘A bit foggy isn’t it ?’
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+test
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Name : Peaxcalibur / Event : ‘I took this out of a stone. What do we do now ?
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+test
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Name : Peakey Blade / Event : ‘… Hu. Is this even a weapon ?’ – Peackey Mouse
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+test
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Name : Golden Peagun / Event : ‘Is this supposed to one shot or something ?
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+test
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Name : Peadators  / Event : ‘Let’s hunt some aliens !’ – Peacock with strange mouth
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+test
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Name : Peanana Bomb / Event : ‘ALL THOSE PEAWORMS WILL DIE’
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Paon_9// Paon_9_War
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Name : Wolvepea / Event : ‘Made of steel by Peacorp and co’
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Paon_10// Paon_10_War
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Name : Unknown blue shell / Event : ‘Noone would ever stand in front of my feathers !
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Paon_1// Paon_11_War
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Name : The Walking Pea / Event : ‘Brhahwhwhwh FEATHERSSS’ – Dead peacock
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Paon_2// Paon_12_War
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Name : Hidden Feather Blade / Event : ‘Peacock’s Creed’ – Covered peacock
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Paon_3// Paon_13_War
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Name : Pokepea-ball  / Event : ‘Peacock Peacock ?’ – A wild peacock appears
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Paon_4// Paon_14_War
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Name : PeaKong / Event : ‘HUUHHUHUH OUUUUH’ – A huge peacock stand on a tower
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+test
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Name : Pea-whip / Event : ‘Would work better on peavampires’
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+test
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Name : Feathermourn / Event : ‘All hail the Pea King’ – Is written on it
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Paon_7// Paon_17_War
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Name : Lightfeather / Event : ‘Luke. I’m your pearent’ – Peark Vader
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Paon_8// Paon_18_War
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Name : Peazilla / Event : ‘All those radiations on such a sweet peacock’
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+test
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Name : Peatal Gear / Event : ‘That’s one shiny peabot’
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Paon_10// Paon_20_War
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+UnloadTime: 2.497942 ms
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 117 unused Assets to reduce memory usage. Loaded Objects now: 186.
+Total: 1.093240 ms (FindLiveObjects: 0.009370 ms CreateObjectMapping: 0.008924 ms MarkObjects: 0.117802 ms  DeleteObjects: 0.543496 ms)
+
